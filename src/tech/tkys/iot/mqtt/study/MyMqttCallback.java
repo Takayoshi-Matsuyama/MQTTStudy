@@ -8,16 +8,16 @@ public class MyMqttCallback implements MqttCallback {
 
     @Override
     public void connectionLost(Throwable throwable) {
-        System.out.println("MQTT Callback: Connection Lost.");
+        System.out.println("[MQTT Subscriber] Connection Lost.");
     }
 
     @Override
     public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
-        System.out.println("MQTT Callback: Message Arraived:\n\t"+ new String(mqttMessage.getPayload()));
+        System.out.println("[MQTT Subscriber] Message Arraived:\n\t"+ new String(mqttMessage.getPayload()));
     }
 
     @Override
     public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
-        System.out.println("MQTT Callback: Delivery Complete.");
+        System.out.println("[MQTT Subscriber] Delivery Complete.");
     }
 }
