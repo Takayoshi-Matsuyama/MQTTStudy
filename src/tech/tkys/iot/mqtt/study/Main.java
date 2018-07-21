@@ -34,8 +34,8 @@ public class Main {
      * Executes MQTT communication.
      */
     private static void executeMqttCommunication() {
-        //        String brokerURI = "tcp://192.168.0.11:1883"; // Specifies an external broker.
-        String brokerURI = "tcp://localhost:1883";
+        String brokerURI = "tcp://192.168.0.11:1883"; // Specifies an external broker.
+//        String brokerURI = "tcp://localhost:1883";
 
         String topic = "MQTTTest";
         int qos = 2;    // Quality of Service (2: Exactly once delivery)
@@ -44,7 +44,7 @@ public class Main {
             MqttClient subscriberClient = subscribeToBroker(brokerURI, topic);
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
-            String messageString = String.format("Hello from MQTT Publisher: %s", sdf.format(new Date()));
+            String messageString = String.format("Hello from MQTT Publisher (MacBook Pro): %s", sdf.format(new Date()));
             publishToBroker(brokerURI, topic, messageString, qos);
 
             if (subscriberClient != null) {
